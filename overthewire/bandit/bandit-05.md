@@ -1,6 +1,7 @@
 We're given the hint that the file is huamn readable, 1033 bytes, and not
 executable. We can use "find" for this.
 
+```sh
 bandit5@bandit:~$ ls
 inhere
 bandit5@bandit:~$ cd inhere/
@@ -13,3 +14,4 @@ bandit5@bandit:~/inhere$ find -size 1033c -readable
 ./maybehere07/.file2
 bandit5@bandit:~/inhere$ cat ./maybehere07/.file2 
 DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+```
