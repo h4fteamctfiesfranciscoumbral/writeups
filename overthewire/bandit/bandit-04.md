@@ -1,6 +1,7 @@
 You can find out which file is ASCII text and which files are not by using the
 "file" utility.
 
+```sh
 bandit4@bandit:~$ ls
 inhere
 bandit4@bandit:~$ cd inhere/
@@ -20,3 +21,4 @@ bandit4@bandit:~/inhere$ file ./*
 ./-file09: data
 bandit4@bandit:~/inhere$ cat ./-file07 
 koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+```
