@@ -2,6 +2,7 @@ Similar to the last level, except now we need to find which port it's running
 on. We're given a range of 31000-32000. Let's find which of these are open
 using "nmap".
 
+```sh
 bandit16@bandit:~$ nmap localhost -p 31000-32000
 
 Starting Nmap 7.01 ( https://nmap.org ) at 2018-09-15 17:37 CEST
@@ -17,10 +18,12 @@ PORT      STATE SERVICE
 31960/tcp open  unknown
 
 Nmap done: 1 IP address (1 host up) scanned in 0.07 seconds
+```
 
 Now let's find out which ones speak SSL and feed the password into those that
 do.
 
+```sh
 bandit16@bandit:~$ openssl s_client -connect localhost:31046
 -snip-
 bandit16@bandit:~$ openssl s_client -connect localhost:31518
@@ -62,12 +65,15 @@ vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
 -----END RSA PRIVATE KEY-----
 
 closed
+```
 
 Awesome. We got the RSA key. Let's punch that into a file, set the permissions,
 and use it to connect to bandit17.
 
+```sh
 bandit16@bandit:~$ mktemp
 /tmp/tmp.v8mn7aGhgE
 bandit16@bandit:~$ vim /tmp/tmp.v8mn7aGhgE
 bandit16@bandit:~$ chmod 600 /tmp/tmp.v8mn7aGhgE
 bandit16@bandit:~$ ssh -i /tmp/tmp.v8mn7aGhgE bandit17@localhost
+```
