@@ -1,5 +1,6 @@
 We did it!
 
+```sh
 bandit33@bandit:~$ ls
 README.txt
 bandit33@bandit:~$ cat README.txt 
@@ -11,3 +12,4 @@ Keep an eye out for an announcement on our usual communication channels!
 In the meantime, you could play some of our other wargames.
 
 If you have an idea for an awesome new level, please let us know!
+```
